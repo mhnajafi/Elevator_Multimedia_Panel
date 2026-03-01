@@ -1,0 +1,75 @@
+uint32_t tmpisr;
+	DMA_Base_Registers *regs = (DMA_Base_Registers *)hdma_dac2.StreamBaseAddress;
+
+	tmpisr = regs->ISR;
+
+	/* Half Transfer Complete Interrupt management ******************************/
+	if ((tmpisr & (DMA_FLAG_HTIF0_4 << hdma_dac2.StreamIndex)) != RESET)
+	{
+		f_read(&SoundFile,(char*)buffer,DAC_BUFFER_SIZE/2,&wbytes);
+		for(int i=1;i<DAC_BUFFER_SIZE/2;i+=2)
+		{
+			*(buffer+i) = *(buffer+i)^0x80;
+		}
+	}
+	/* Transfer Complete Interrupt management ***********************************/
+	if ((tmpisr & (DMA_FLAG_TCIF0_4 << hdma_dac2.StreamIndex)) != RESET)
+	{
+		f_read(&SoundFile,(char*)(buffer+(DAC_BUFFER_SIZE/2)),DAC_BUFFER_SIZE/2,&wbytes);
+		for(int i=1;i<DAC_BUFFER_SIZE/2;i+=2)
+		{
+			*(buffer+(DAC_BUFFER_SIZE/2)+i) = *(buffer+(DAC_BUFFER_SIZE/2)+i)^0x80;
+		}
+	}
+	
+	
+	
+	if(Dac_State !=0)
+		{
+			if(Dac_State==1)
+				f_read(&SoundFile,(char*)Dac_Temp_Buffer,DAC_BUFFER_SIZE/2,&wbytes);
+			else
+				f_read(&SoundFile,(char*)(Dac_Temp_Buffer+(DAC_BUFFER_SIZE/2)),DAC_BUFFER_SIZE/2,&wbytes);
+
+			Dac_State=0;
+		}
+	
+	
+	
+	
+	
+	sprintf(string,"Total image load time=%d\rTotal Audio Buffer Fill time=%d",sd1,sd2);
+	f_open(&LogFile,"/log.txt",FA_WRITE|FA_CREATE_NEW);
+	f_write(&LogFile, string, len(string), wbytes);
+	f_close(&LogFile);
+	
+	
+	
+	
+	
+	/* Half Transfer Complete Interrupt management ******************************/
+	if ((tmpisr & (DMA_FLAG_HTIF0_4 << hdma_dac2.StreamIndex)) != RESET)
+	{
+		//f_read(&SoundFile,(char*)Dac_Buffer,DAC_BUFFER_SIZE/2,&wbytes);
+		for(int i=1;i<DAC_BUFFER_SIZE/2;i+=2)
+		{
+			*(Dac_Buffer+i) = *(Dac_Temp_Buffer+i)^0x80;
+		}
+		Dac_State=1;
+
+	}
+	/* Transfer Complete Interrupt management ***********************************/
+	if ((tmpisr & (DMA_FLAG_TCIF0_4 << hdma_dac2.StreamIndex)) != RESET)
+	{
+		//f_read(&SoundFile,(char*)(Dac_Buffer+(DAC_BUFFER_SIZE/2)),DAC_BUFFER_SIZE/2,&wbytes);
+		for(int i=1;i<DAC_BUFFER_SIZE/2;i+=2)
+		{
+			*(Dac_Buffer+(DAC_BUFFER_SIZE/2)+i) = *(Dac_Temp_Buffer+(DAC_BUFFER_SIZE/2)+i)^0x80;
+		}
+		Dac_State=2;
+	}
+	
+	
+	
+	
+	

@@ -1,0 +1,31 @@
+if(Loaded_Images[m]==1)
+			{
+
+				SRAM_RowBankActive(ad);
+
+				for(int j=0;j<17;j++)
+				{
+					tim=HAL_GetTick();
+					f_read(&MyFile,buffer,92160,&wb);
+					tim2=HAL_GetTick()-tim;
+					for(int d=0;d<16;d++)
+					{
+						color=( (buffer[d*960] << 8) | buffer[d*960+1] );
+						SRAM_RowBankActive((j*16)+d+ad);
+						SRAM_Write(bank,color,0);
+
+						for(int c=1;c<480;c++)
+						{
+
+							color=( (buffer[(d*960)+(c*2)] << 8) | buffer[(d*960)+(c*2+1)] );
+							SRAM_Write(bank,color,1);
+						}
+
+						SRAM_BurstStop();
+						SRAM_Precharge();
+					}
+
+				}
+
+
+			}

@@ -1,0 +1,337 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{5908F3DC-D8BE-4E53-8012-79C70795E726}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>App1</RootNamespace>
+    <AssemblyName>App1</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <TargetFrameworkProfile />
+    <PublishUrl>C:\Users\mhn\Desktop\app\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <AutorunEnabled>true</AutorunEnabled>
+    <ApplicationRevision>2</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>5626053A053C34CA0CB07EF31CA824DA90242BA4</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>App1_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>true</SignManifests>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="BitMiracle.Docotic.Pdf, Version=7.2.10857.0, Culture=neutral, PublicKeyToken=221650e173990c07, processorArchitecture=MSIL">
+      <HintPath>..\packages\BitMiracle.Docotic.Pdf.7.2.10857\lib\net40\BitMiracle.Docotic.Pdf.dll</HintPath>
+    </Reference>
+    <Reference Include="NAudio, Version=1.10.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\NAudio.1.10.0\lib\net35\NAudio.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="app.config" />
+    <None Include="App1_TemporaryKey.pfx" />
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PU1.png" />
+    <None Include="Resources\PINTRO.png" />
+    <None Include="Resources\PINTRO.jpg" />
+    <None Include="Resources\SDINGDONG.wav" />
+    <None Include="Resources\S03.wav" />
+    <None Include="Resources\S-2.wav" />
+    <None Include="Resources\S02.wav" />
+    <None Include="Resources\S-1.wav" />
+    <None Include="Resources\S01.wav" />
+    <None Include="Resources\SWELCOME.wav" />
+    <None Include="Resources\SUG4.wav" />
+    <None Include="Resources\SUG3.wav" />
+    <None Include="Resources\SUG2.wav" />
+    <None Include="Resources\SUG1.wav" />
+    <None Include="Resources\SUG.wav" />
+    <None Include="Resources\SR.wav" />
+    <None Include="Resources\SP4.wav" />
+    <None Include="Resources\SP3.wav" />
+    <None Include="Resources\SP2.wav" />
+    <None Include="Resources\SP1.wav" />
+    <None Include="Resources\SP.wav" />
+    <None Include="Resources\SOVL2.wav" />
+    <None Include="Resources\SOVL.wav" />
+    <None Include="Resources\SL.wav" />
+    <None Include="Resources\SGF.wav" />
+    <None Include="Resources\SEMG2.wav" />
+    <None Include="Resources\SEMG.wav" />
+    <None Include="Resources\SDO.wav" />
+    <None Include="Resources\SDINGDONG2.wav" />
+    <None Include="Resources\S19.wav" />
+    <None Include="Resources\S18.wav" />
+    <None Include="Resources\S17.wav" />
+    <None Include="Resources\S16.wav" />
+    <None Include="Resources\S15.wav" />
+    <None Include="Resources\S14.wav" />
+    <None Include="Resources\S13.wav" />
+    <None Include="Resources\S12.wav" />
+    <None Include="Resources\S11.wav" />
+    <None Include="Resources\S10.wav" />
+    <None Include="Resources\S09.wav" />
+    <None Include="Resources\S08.wav" />
+    <None Include="Resources\S07.wav" />
+    <None Include="Resources\S06.wav" />
+    <None Include="Resources\S05.wav" />
+    <None Include="Resources\S-4.wav" />
+    <None Include="Resources\S04.wav" />
+    <None Include="Resources\S-3.wav" />
+    <None Include="Resources\PP4.wav" />
+    <None Include="Resources\PP3.wav" />
+    <None Include="Resources\PP2.wav" />
+    <None Include="Resources\PP1.wav" />
+    <None Include="Resources\PP.wav" />
+    <None Include="Resources\R.wav" />
+    <None Include="Resources\welcome.wav" />
+    <None Include="Resources\UG4.wav" />
+    <None Include="Resources\UG3.wav" />
+    <None Include="Resources\UG2.wav" />
+    <None Include="Resources\UG1.wav" />
+    <None Include="Resources\UG.wav" />
+    <None Include="Resources\welcome.mp3" />
+    <None Include="Resources\UG4.mp3" />
+    <None Include="Resources\UG3.mp3" />
+    <None Include="Resources\UG2.mp3" />
+    <None Include="Resources\UG1.mp3" />
+    <None Include="Resources\UG.mp3" />
+    <None Include="Resources\R.mp3" />
+    <None Include="Resources\PH.jpg" />
+    <None Include="Resources\PGF.jpg" />
+    <None Include="Resources\up.png" />
+    <None Include="Resources\PR.jpg" />
+    <None Include="Resources\PP.jpg" />
+    <None Include="Resources\POVL.jpg" />
+    <None Include="Resources\PL.jpg" />
+    <None Include="Resources\1.wav" />
+    <None Include="Resources\2.wav" />
+    <None Include="Resources\3.wav" />
+    <None Include="Resources\4.wav" />
+    <None Include="Resources\5.wav" />
+    <None Include="Resources\6.wav" />
+    <None Include="Resources\7.wav" />
+    <None Include="Resources\8.wav" />
+    <None Include="Resources\9.wav" />
+    <None Include="Resources\10.wav" />
+    <None Include="Resources\11.wav" />
+    <None Include="Resources\12.wav" />
+    <None Include="Resources\13.wav" />
+    <None Include="Resources\14.wav" />
+    <None Include="Resources\15.wav" />
+    <None Include="Resources\16.wav" />
+    <None Include="Resources\17.wav" />
+    <None Include="Resources\18.wav" />
+    <None Include="Resources\19.wav" />
+    <None Include="Resources\B.wav" />
+    <None Include="Resources\B1.wav" />
+    <None Include="Resources\B2.wav" />
+    <None Include="Resources\B3.wav" />
+    <None Include="Resources\B4.wav" />
+    <None Include="Resources\DING DONG.wav" />
+    <None Include="Resources\Aup.png" />
+    <None Include="Resources\Adown.png" />
+    <None Include="Resources\Adown2.png" />
+    <None Include="Resources\Aup2.png" />
+    <None Include="Resources\down.png" />
+    <None Include="Resources\DingDong.mp3" />
+    <None Include="Resources\DINGDONG2.mp3" />
+    <None Include="Resources\DO.mp3" />
+    <None Include="Resources\Emg.mp3" />
+    <None Include="Resources\Emg2.mp3" />
+    <None Include="Resources\GF.mp3" />
+    <None Include="Resources\L.mp3" />
+    <None Include="Resources\DingDong.wav" />
+    <None Include="Resources\DINGDONG2.wav" />
+    <None Include="Resources\DO.wav" />
+    <None Include="Resources\Emg.wav" />
+    <None Include="Resources\Emg2.wav" />
+    <None Include="Resources\GF.wav" />
+    <None Include="Resources\L.wav" />
+    <None Include="Resources\intro.jpg" />
+    <Content Include="Resources\Logo.png" />
+    <None Include="Resources\Logo1.png" />
+    <None Include="Resources\M5.wav" />
+    <None Include="Resources\P.wav" />
+    <None Include="Resources\P1.wav" />
+    <None Include="Resources\P2.wav" />
+    <None Include="Resources\P3.wav" />
+    <None Include="Resources\P4.wav" />
+    <None Include="Resources\P00.jpg" />
+    <None Include="Resources\P01.jpg" />
+    <None Include="Resources\P-1.jpg" />
+    <None Include="Resources\P02.jpg" />
+    <None Include="Resources\P-2.jpg" />
+    <None Include="Resources\P03.jpg" />
+    <None Include="Resources\P-3.jpg" />
+    <None Include="Resources\P04.jpg" />
+    <None Include="Resources\P-4.jpg" />
+    <None Include="Resources\P05.jpg" />
+    <None Include="Resources\P06.jpg" />
+    <None Include="Resources\P07.jpg" />
+    <None Include="Resources\P08.jpg" />
+    <None Include="Resources\P09.jpg" />
+    <None Include="Resources\P10.jpg" />
+    <None Include="Resources\P11.jpg" />
+    <None Include="Resources\P12.jpg" />
+    <None Include="Resources\P13.jpg" />
+    <None Include="Resources\P14.jpg" />
+    <None Include="Resources\P15.jpg" />
+    <None Include="Resources\P16.jpg" />
+    <None Include="Resources\P17.jpg" />
+    <None Include="Resources\P18.jpg" />
+    <None Include="Resources\P19.jpg" />
+    <None Include="Resources\PB.jpg" />
+    <None Include="Resources\PDO.jpg" />
+    <None Include="Resources\PC.jpg" />
+    <None Include="Resources\OVL.mp3" />
+    <None Include="Resources\OVL2.mp3" />
+    <None Include="Resources\P01.mp3" />
+    <None Include="Resources\P-1.mp3" />
+    <None Include="Resources\P02.mp3" />
+    <None Include="Resources\P-2.mp3" />
+    <None Include="Resources\P03.mp3" />
+    <None Include="Resources\P-3.mp3" />
+    <None Include="Resources\P04.mp3" />
+    <None Include="Resources\P-4.mp3" />
+    <None Include="Resources\P05.mp3" />
+    <None Include="Resources\P06.mp3" />
+    <None Include="Resources\P07.mp3" />
+    <None Include="Resources\P08.mp3" />
+    <None Include="Resources\P09.mp3" />
+    <None Include="Resources\P10.mp3" />
+    <None Include="Resources\P11.mp3" />
+    <None Include="Resources\P12.mp3" />
+    <None Include="Resources\P13.mp3" />
+    <None Include="Resources\P14.mp3" />
+    <None Include="Resources\P15.mp3" />
+    <None Include="Resources\P16.mp3" />
+    <None Include="Resources\P17.mp3" />
+    <None Include="Resources\P18.mp3" />
+    <None Include="Resources\P19.mp3" />
+    <None Include="Resources\OVL.wav" />
+    <None Include="Resources\OVL2.wav" />
+    <None Include="Resources\P01.wav" />
+    <None Include="Resources\P-1.wav" />
+    <None Include="Resources\P02.wav" />
+    <None Include="Resources\P-2.wav" />
+    <None Include="Resources\P03.wav" />
+    <None Include="Resources\P-3.wav" />
+    <None Include="Resources\P04.wav" />
+    <None Include="Resources\P-4.wav" />
+    <None Include="Resources\P05.wav" />
+    <None Include="Resources\P06.wav" />
+    <None Include="Resources\P07.wav" />
+    <None Include="Resources\P08.wav" />
+    <None Include="Resources\P09.wav" />
+    <None Include="Resources\P10.wav" />
+    <None Include="Resources\P11.wav" />
+    <None Include="Resources\P12.wav" />
+    <None Include="Resources\P13.wav" />
+    <None Include="Resources\P14.wav" />
+    <None Include="Resources\P15.wav" />
+    <None Include="Resources\P16.wav" />
+    <None Include="Resources\P17.wav" />
+    <None Include="Resources\P18.wav" />
+    <None Include="Resources\P19.wav" />
+    <None Include="Resources\PD1.png" />
+    <Content Include="Resources\pexels-photo-255379.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\packages\WaveFormRendererLib\WaveFormRendererLib.csproj">
+      <Project>{3efef2d1-5d08-46fd-af6d-098dbe7fb3b4}</Project>
+      <Name>WaveFormRendererLib</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

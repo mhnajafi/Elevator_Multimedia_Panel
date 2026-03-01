@@ -1,0 +1,9 @@
+C:\Users\mhn\Desktop\Elevator LCD\Application\App 2\packages\WaveFormRendererLib\obj\Debug\WaveFormRendererLib.csprojAssemblyReference.cache
+C:\Users\mhn\Desktop\Elevator LCD\Application\App 2\packages\WaveFormRendererLib\obj\Debug\WaveFormRendererLib.csproj.CoreCompileInputs.cache
+C:\Users\mhn\Desktop\Elevator LCD\Application\App 2\packages\WaveFormRendererLib\bin\Debug\WaveFormRendererLib.dll
+C:\Users\mhn\Desktop\Elevator LCD\Application\App 2\packages\WaveFormRendererLib\bin\Debug\WaveFormRendererLib.pdb
+C:\Users\mhn\Desktop\Elevator LCD\Application\App 2\packages\WaveFormRendererLib\bin\Debug\NAudio.dll
+C:\Users\mhn\Desktop\Elevator LCD\Application\App 2\packages\WaveFormRendererLib\bin\Debug\NAudio.xml
+C:\Users\mhn\Desktop\Elevator LCD\Application\App 2\packages\WaveFormRendererLib\obj\Debug\WaveFormRendererLib.csproj.CopyComplete
+C:\Users\mhn\Desktop\Elevator LCD\Application\App 2\packages\WaveFormRendererLib\obj\Debug\WaveFormRendererLib.dll
+C:\Users\mhn\Desktop\Elevator LCD\Application\App 2\packages\WaveFormRendererLib\obj\Debug\WaveFormRendererLib.pdb

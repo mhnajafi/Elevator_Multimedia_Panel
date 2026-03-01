@@ -1,0 +1,180 @@
+if(Standby==1)            //################ StandBy ########################
+		{
+			SRAM_Precharge();
+			SRAM_AutoRefresh();
+			if(HAL_GPIO_ReadPin(GPIOC,IN_PH_Pin)==Setting.PH)
+			{
+				LCD_Display(1);
+				Standby=2;
+			}
+
+		}
+		else if(Standby==2)      //################ Return From StandBy ########################
+		{
+			if(Setting.Menu==1)
+			{
+				LCD_Show(10);
+				State=ReadState(LastState);
+				if(State!=LastState)
+				{
+					Standby=0;
+				}
+			}
+			else
+			{
+				Standby=0;
+			}
+			
+		}
+		else					//################ Normal Mode ########################
+		{
+			State=ReadState(LastState);
+			if(State==LastState)
+			{
+				if(StanbyTimer.Started==1)
+				{
+					if( HAL_GetTick()- StanbyTimer.Start_time > Setting.Stanby)
+					{
+						Standby=1;
+						StanbyTimer.Started=0;
+						StanbyTimer.Start_time=0;
+						PlayStop();
+						LCD_Display(0);
+					}
+				}
+				else
+				{
+					StanbyTimer.Started=1;
+					StanbyTimer.Start_time=HAL_GetTick();
+				}
+
+				LCD_Show(State);
+
+			}
+			else
+			{
+				StanbyTimer.Started=0;
+				StanbyTimer.Start_time=0;
+				if(Setting.Slider==1) Slide_Show(LastState, State);
+				LastState=State;
+			}
+
+		}
+
+
+
+
+
+
+
+
+if(Player.Status==Endfile || Player.Status==Stop)
+			{
+				if(Setting.Play!=2 && PlayList.MusicNumbers>0)
+				{
+					if(PlayList.Pause==1)    //Resume Music
+					{
+						PlayMusic(PlayList.LastPlay, PlayList.PauseSeek);
+						PlayList.Pause=0;
+						PlayList.PauseSeek=0;
+					}
+					else					//Play New Music
+					{
+						if(Setting.Shuffle==1)
+						{
+							while(1)
+							{
+								PlayList.LastPlay=RandomNumber(PlayList.MusicNumbers);
+								if(PlayMusic(PlayList.LastPlay, 0)==FR_OK) break;
+							}
+						}
+						else
+						{
+							while(1)
+							{
+								if(PlayList.LastPlay<PlayList.MusicNumbers) PlayList.LastPlay++;
+								else PlayList.LastPlay=0;
+								if(PlayMusic(PlayList.LastPlay, 0)==FR_OK) break;
+							}
+						}
+					}
+				}
+			}
+			
+			
+			
+			
+			
+			
+			
+if(Standby==1)            //################ StandBy ########################
+		{
+			SRAM_Precharge();
+			SRAM_AutoRefresh();
+			if(HAL_GPIO_ReadPin(GPIOC,IN_PH_Pin)==Setting.PH)
+			{
+				LCD_Display(1);
+				Standby=2;
+			}
+
+		}
+		else if(Standby==2)      //################ Return From StandBy ########################
+		{
+			if(Setting.Menu==1)
+			{
+				LCD_Show(10);
+				State=ReadState(LastState);
+				if(State!=LastState)
+				{
+					Standby=0;
+				}
+			}
+			else
+			{
+				Standby=0;
+			}
+
+		}
+		else					//################ Normal Mode ########################
+		{
+			//------------------------- Sound System -------------------
+
+			if(Player.Status==Endfile || Player.Status==Stop)
+			{
+				PlayStart("/Music/1.wav", 0);
+			}
+
+
+
+			//------------------------- Image System -------------------
+			State=ReadState(LastState);
+			if(State==LastState)
+			{
+				if(StanbyTimer.Started==1)
+				{
+					if( HAL_GetTick()- StanbyTimer.Start_time > Setting.Stanby)
+					{
+						Standby=1;
+						StanbyTimer.Started=0;
+						StanbyTimer.Start_time=0;
+						PlayStop();
+						LCD_Display(0);
+					}
+				}
+				else
+				{
+					StanbyTimer.Started=1;
+					StanbyTimer.Start_time=HAL_GetTick();
+				}
+				LCD_Show(State);
+			}
+			else
+			{
+				StanbyTimer.Started=0;
+				StanbyTimer.Start_time=0;
+				if(Setting.Slider==1) Slide_Show(LastState, State);
+				LastState=State;
+			}
+
+		}
+
